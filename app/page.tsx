@@ -103,11 +103,18 @@ export default function Home() {
 
         <section className="my-6">
           <h2 className="text-2xl font-semibold">Compétences</h2>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skill) => (
-              <div key={skill.type}>
-                <h3 className="font-medium">{skill.type}</h3>
-                <SkillBar skills={[{ type: skill.type, level: skill.level }]} />
+              <div key={skill.type} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                <h3 className="font-medium mb-2 text-sm md:text-base break-words">{skill.type}</h3>
+                <div className="w-full">
+                  <SkillBar 
+                    skills={[{ type: skill.type, level: skill.level }]}
+                    height={20}
+                    animationDelay={0}
+                    animationDuration={1000}
+                  />
+                </div>
               </div>
             ))}
           </div>

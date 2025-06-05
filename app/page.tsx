@@ -76,8 +76,6 @@ export default function Home() {
         <Image src="/PXL_20240718_095208802.MP.jpg" alt="Antony Audic" width={150} height={150} className="rounded-full mx-auto"/>
         <h1 className="text-3xl font-bold">Antony Audic</h1>
         <p>Ingénieur Système & Cybersécurité</p>
-        <p>15 rue Paul Claudel</p>
-        <p>06 10 65 98 49</p>
         <p>audic.antony@gmail.com</p>
         <p>Permis de conduire B</p>
         <a
@@ -87,7 +85,6 @@ export default function Home() {
         >
           Télécharger le CV
         </a>
-        {/* Lien LinkedIn */}
         <a href="https://www.linkedin.com/in/antony-audic-b51a9a80" target="_blank" className="ml-4">
           <FaLinkedin size={30} className="text-white"/>
         </a>
@@ -111,12 +108,15 @@ export default function Home() {
                 </h3>
                 <div className="w-full">
                   <SkillBar 
-                    skills={[{ type: skill.type.split(':')[1] || skill.type, level: skill.level }]}
+                    skills={[{ type: "", level: skill.level }]}
                     height={25}
                     animationDelay={0}
                     animationDuration={1000}
                   />
                 </div>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 break-words">
+                  {skill.type.split(':')[1] || skill.type}
+                </p>
               </div>
             ))}
           </div>
